@@ -2,7 +2,7 @@
 /**
  * Tests for the root plugin file.
  *
- * @package BH_WC_CND_Everflow
+ * @package brianhenryie/bh-wc-cnd-everflow
  * @author  BrianHenryIE <BrianHenryIE@gmail.com>
  */
 

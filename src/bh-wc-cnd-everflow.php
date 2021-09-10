@@ -6,7 +6,7 @@
  *
  * @link              http://BrianHenryIE.com
  * @since             1.0.0
- * @package           BH_WC_CND_Everflow
+ * @package           brianhenryie/bh-wc-cnd-everflow
  *
  * @wordpress-plugin
  * Plugin Name:       CND Everflow

@@ -5,11 +5,10 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @link       http://example.com
+ * @link       https://BrianHenryIE.com
  * @since      1.0.0
  *
- * @package    BH_WC_CND_Everflow
- * @subpackage BH_WC_CND_Everflow/includes
+ * @package    brianhenryie/bh-wc-cnd-everflow
  */
 
 namespace BrianHenryIE\WC_CND_Everflow\Includes;
@@ -21,8 +20,7 @@ namespace BrianHenryIE\WC_CND_Everflow\Includes;
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    BH_WC_CND_Everflow
- * @subpackage BH_WC_CND_Everflow/includes
+ * @package    brianhenryie/bh-wc-cnd-everflow
  * @author     BrianHenryIE <BrianHenryIE@gmail.com>
  */
 class I18n {

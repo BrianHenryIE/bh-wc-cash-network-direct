@@ -2,7 +2,7 @@
 /**
  * Silence is golden.
  *
- * @package    BH_WC_CND_Everflow
+ * @package    brianhenryie/bh-wc-cnd-everflow
  */
 
 die();

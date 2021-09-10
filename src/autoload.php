@@ -4,9 +4,9 @@
  *
  * Uses classmap, PSR4 & wp-namespace-autoloader.
  *
- * @link              http://example.com
+ * @link              https://BrianHenryIE.com
  * @since             1.0.0
- * @package           BH_WC_CND_Everflow
+ * @package           brianhenryie/bh-wc-cnd-everflow
  *
  * @see https://github.com/pablo-sg-pacheco/wp-namespace-autoloader/
  */

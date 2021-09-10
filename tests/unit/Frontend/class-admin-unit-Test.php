@@ -4,7 +4,7 @@
  *
  * @see Frontend
  *
- * @package bh-wc-cnd-everflow
+ * @package brianhenryie/bh-wc-cnd-everflow
  * @author Brian Henry <BrianHenryIE@gmail.com>
  */
 
@@ -50,7 +50,7 @@ class Frontend_Test extends \Codeception\Test\Unit {
 		);
 
 		$handle    = 'cash-network-direct-remote';
-		$src       = 'http://example.com/scripts/sdk/everflow.js';
+		$src       = 'https://example.com/scripts/sdk/everflow.js';
 		$deps      = array();
 		$ver       = null;
 		$in_footer = true;
@@ -81,7 +81,7 @@ class Frontend_Test extends \Codeception\Test\Unit {
 			Settings::class,
 			array(
 				'is_configured'       => true,
-				'get_tracking_domain' => 'http://example.com',
+				'get_tracking_domain' => 'example.com',
 			)
 		);
 		$frontend = new Frontend( $settings );

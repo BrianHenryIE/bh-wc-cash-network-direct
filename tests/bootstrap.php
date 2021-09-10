@@ -1,6 +1,6 @@
 <?php
 /**
- * @package           BH_WC_CND_Everflow
+ * @package           brianhenryie/bh-wc-cnd-everflow
  */
 
 $GLOBALS['project_root_dir']   = $project_root_dir  = dirname( __FILE__, 2 );

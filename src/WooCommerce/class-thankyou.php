@@ -1,24 +1,48 @@
 <?php
+/**
+ * Enqueues the script to record the conversion after checkout is complete.
+ *
+ * @link       https://BrianHenryIE.com
+ * @since      1.0.0
+ *
+ * @package    brianhenryie/bh-wc-cnd-everflow
+ */
 
 namespace BrianHenryIE\WC_CND_Everflow\WooCommerce;
 
 use BrianHenryIE\WC_CND_Everflow\Frontend\Frontend;
 use BrianHenryIE\WC_CND_Everflow\Settings;
 
+/**
+ * Checks are the settings present, output order details into JavaScript to be fired on page load.
+ */
 class ThankYou {
 
+	/**
+	 * Used to check are the settings configured.
+	 *
+	 * @var Settings
+	 */
 	protected Settings $settings;
 
+	/**
+	 * Thank you page conversion recording.
+	 *
+	 * @param Settings $settings The plugin settings.
+	 */
 	public function __construct( Settings $settings ) {
 		$this->settings = $settings;
 	}
 
 	/**
+	 * Adds order details to the conversion tracking JavaScript and enqueues it after the main JS file.
+	 *
 	 * @hooked woocommerce_thankyou
+	 * @see woocommerce/templates/checkout/thankyou.php
 	 *
 	 * @param int $order_id The WooCommerce order id.
 	 */
-	public function custom_tracking( int $order_id ): void {
+	public function conversion_tracking( int $order_id ): void {
 
 		if ( ! $this->settings->is_configured() ) {
 			return;
@@ -36,7 +60,7 @@ class ThankYou {
 		$coupons       = implode( ',', $order->get_coupon_codes() );
 		$billing_email = $order->get_billing_email();
 
-		list( $adv1, $adv2, $adv3, $adv4, $adv5 ) = apply_filters( 'bh_wc_cnd_eveflow_adv', array( '', '', '', '', '' ) );
+		list( $adv1, $adv2, $adv3, $adv4, $adv5 ) = apply_filters( 'bh_wc_cnd_eveflow_thankyou', array( '', '', '', '', '' ) );
 
 		$script = <<<EOD
 EF.conversion({

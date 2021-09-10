@@ -2,7 +2,7 @@
 /**
  * PHPUnit bootstrap file for WP_Mock.
  *
- * @package           BH_WC_CND_Everflow
+ * @package           brianhenryie/bh-wc-cnd-everflow
  */
 
 WP_Mock::setUsePatchwork( true );

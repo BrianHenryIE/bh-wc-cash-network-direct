@@ -1,6 +1,6 @@
 <?php
 /**
- * @package BH_WC_CND_Everflow_Unit_Name
+ * @package brianhenryie/bh-wc-cnd-everflow
  * @author  BrianHenryIE <BrianHenryIE@gmail.com>
  */
 

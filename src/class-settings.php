@@ -1,10 +1,23 @@
 <?php
+/**
+ * The plugins settings.
+ *
+ * @link       https://BrianHenryIE.com
+ * @since      1.0.0
+ *
+ * @package    brianhenryie/bh-wc-cnd-everflow
+ */
 
 namespace BrianHenryIE\WC_CND_Everflow;
 
 use BrianHenryIE\WC_CND_Everflow\Frontend\Frontend;
 use BrianHenryIE\WC_CND_Everflow\WooCommerce\ThankYou;
 
+/**
+ * A facade over the WooCommerce managed settings.
+ *
+ * @see \WC_Settings_API
+ */
 class Settings {
 
 	const OPTION_NAME = 'woocommerce_bh_wc_cnd_everflow_settings';
@@ -13,6 +26,10 @@ class Settings {
 	const TRACKING_DOMAIN_SETTING_NAME = 'tracking_domain';
 
 	/**
+	 * WooCommerce stores all the settings under on option key. Fetch it here for the public methods to use.
+	 *
+	 * @see @see \WC_Settings_API::get_option_key()
+	 *
 	 * @return array{advertiser_id: ?string, tracking_domain: ?string}
 	 */
 	protected function get_all_options(): array {
@@ -24,7 +41,7 @@ class Settings {
 	 * Used so the JavaScript is not loaded when it cannot be useful.
 	 *
 	 * @used-by Frontend::enqueue_scripts()
-	 * @used-by ThankYou::custom_tracking()
+	 * @used-by ThankYou::conversion_tracking()
 	 *
 	 * @return bool
 	 */

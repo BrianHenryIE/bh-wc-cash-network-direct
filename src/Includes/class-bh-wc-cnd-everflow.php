@@ -5,11 +5,10 @@
  * A class definition that includes attributes and functions used across both the
  * frontend-facing side of the site and the admin area.
  *
- * @link       http://example.com
+ * @link       https://BrianHenryIE.com
  * @since      1.0.0
  *
- * @package    BH_WC_CND_Everflow
- * @subpackage BH_WC_CND_Everflow/includes
+ * @package    brianhenryie/bh-wc-cnd-everflow
  */
 
 namespace BrianHenryIE\WC_CND_Everflow\Includes;
@@ -18,6 +17,7 @@ use BrianHenryIE\WC_CND_Everflow\Admin\Plugins_Page;
 use BrianHenryIE\WC_CND_Everflow\Frontend\Frontend;
 use BrianHenryIE\WC_CND_Everflow\Settings;
 use BrianHenryIE\WC_CND_Everflow\WooCommerce\Register_Settings_Integration;
+use BrianHenryIE\WC_CND_Everflow\WooCommerce\Settings_Page;
 use BrianHenryIE\WC_CND_Everflow\WooCommerce\ThankYou;
 
 /**
@@ -30,12 +30,19 @@ use BrianHenryIE\WC_CND_Everflow\WooCommerce\ThankYou;
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    BH_WC_CND_Everflow
- * @subpackage BH_WC_CND_Everflow/includes
+ * @package    brianhenryie/bh-wc-cnd-everflow
  * @author     BrianHenryIE <BrianHenryIE@gmail.com>
  */
 class BH_WC_CND_Everflow {
 
+	/**
+	 * The advertiser id and tracking domain, as entered in the WooCommerce settings UI.
+	 *
+	 * @used-by Frontend::enqueue_scripts()
+	 * @used-by ThankYou::conversion_tracking()
+	 *
+	 * @var Settings The plugin's settings.
+	 */
 	protected Settings $settings;
 
 	/**
@@ -46,6 +53,8 @@ class BH_WC_CND_Everflow {
 	 * the frontend-facing side of the site.
 	 *
 	 * @since    1.0.0
+	 *
+	 * @param Settings $settings The plugin's settings.
 	 */
 	public function __construct( Settings $settings ) {
 
@@ -77,6 +86,11 @@ class BH_WC_CND_Everflow {
 
 	}
 
+	/**
+	 * Adds links on plugins.php to the Settings page, and to the Everflow Support and Login.
+	 *
+	 * @since    1.0.0
+	 */
 	protected function define_plugins_page_hooks(): void {
 
 		$plugins_page = new Plugins_Page();
@@ -85,9 +99,15 @@ class BH_WC_CND_Everflow {
 
 		add_filter( "plugin_action_links_{$plugin_basename}", array( $plugins_page, 'action_links' ), 10, 4 );
 		add_filter( 'plugin_row_meta', array( $plugins_page, 'row_meta' ), 10, 4 );
-
 	}
 
+	/**
+	 * Registers the settings page with WooCommerce which later instantiates it.
+	 *
+	 * @see Settings_Page
+	 *
+	 * @since    1.0.0
+	 */
 	protected function defined_woocommerce_settings_page_hooks(): void {
 
 		$register_settings_integration = new Register_Settings_Integration();
@@ -106,14 +126,17 @@ class BH_WC_CND_Everflow {
 		$plugin_frontend = new Frontend( $this->settings );
 
 		add_action( 'wp_enqueue_scripts', array( $plugin_frontend, 'enqueue_scripts' ) );
-
 	}
 
+	/**
+	 * Adds the order details to the JavaScript and outputs it on the order confirmation page.
+	 *
+	 * @since    1.0.0
+	 */
 	protected function define_woocommerce_thankyou_page_hooks(): void {
 
 		$thankyou = new ThankYou( $this->settings );
 
-		add_action( 'woocommerce_thankyou', array( $thankyou, 'custom_tracking' ) );
-
+		add_action( 'woocommerce_thankyou', array( $thankyou, 'conversion_tracking' ) );
 	}
 }

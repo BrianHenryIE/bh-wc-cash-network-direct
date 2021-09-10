@@ -1,11 +1,18 @@
 <?php
 /**
  * Register the settings page to appear WooCommerce / Settings / Integrations / Everflow.
+ *
+ * @link       https://BrianHenryIE.com
+ * @since      1.0.0
+ *
+ * @package    brianhenryie/bh-wc-cnd-everflow
  */
 
 namespace BrianHenryIE\WC_CND_Everflow\WooCommerce;
 
 /**
+ * Simple filter to tell WooCommerce which class to instantiate.
+ *
  * @see \WC_Integration
  */
 class Register_Settings_Integration {

@@ -5,7 +5,7 @@
     "license": "GPL-2.0+-or-later",
     "authors": [
         {
-            "name": "BrianHenryIE",
+            "name": "Brian Henry",
             "email": "BrianHenryIE@gmail.com"
         }
     ],
@@ -27,10 +27,6 @@
         {
             "type":"composer",
             "url":"https://wpackagist.org"
-        },
-        {
-            "url": "https://github.com/BrianHenryIE/dist-archive-command",
-            "type": "git"
         }
     ],
     "require": {
@@ -65,8 +61,7 @@
         "wp-cli/wp-cli-bundle": "*",
         "wp-coding-standards/wpcs": "*",
         "wpackagist-plugin/woocommerce": "^5.6",
-        "wpackagist-theme/storefront": "^3.8",
-        "wpackagist-theme/twentytwenty": "*"
+        "wpackagist-theme/storefront": "^3.8"
     },
     "extra": {
         "patches": {
@@ -89,6 +84,9 @@
                 "erusev/parsedown": {
                     "files": ["Parsedown.php"]
                 }
+            },
+            "exclude_from_prefix": {
+                "packages": ["yahnis-elsts/plugin-update-checker","erusev/parsedown"]
             }
         },
         "symlinks": {
@@ -143,7 +141,7 @@
             "vendor/bin/phpcs"
         ],
         "create-plugin-archive": [
-            "vendor/bin/wp dist-archive src --plugin-dirname=bh-wc-cnd-everflow"
+            "vendor/bin/wp dist-archive src --plugin-dirname=$(basename \"$PWD\")"
         ]
     }
 }

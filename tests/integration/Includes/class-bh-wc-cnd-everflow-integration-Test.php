@@ -2,7 +2,7 @@
 /**
  * Tests for BH_WC_CND_Everflow main setup class. Tests the actions are correctly added.
  *
- * @package BH_WC_CND_Everflow
+ * @package brianhenryie/bh-wc-cnd-everflow
  * @author  BrianHenryIE <BrianHenryIE@gmail.com>
  */
 

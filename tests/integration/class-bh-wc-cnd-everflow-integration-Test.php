@@ -2,7 +2,7 @@
 /**
  * Class Plugin_Test. Tests the root plugin setup.
  *
- * @package BH_WC_CND_Everflow
+ * @package brianhenryie/bh-wc-cnd-everflow
  * @author     BrianHenryIE <BrianHenryIE@gmail.com>
  */
 

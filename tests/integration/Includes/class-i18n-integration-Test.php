@@ -2,7 +2,7 @@
 /**
  * Tests for I18n. Tests load_plugin_textdomain.
  *
- * @package BH_WC_CND_Everflow
+ * @package brianhenryie/bh-wc-cnd-everflow
  * @author  BrianHenryIE <BrianHenryIE@gmail.com>
  */
 
