@@ -12,7 +12,7 @@
  * Plugin Name:       CND Everflow
  * Plugin URI:        http://github.com/BrianHenryIE/bh-wc-cnd-everflow/
  * Description:       Advertising conversion tracking for Cash Network Direct Everflow.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            BrianHenryIE
  * Author URI:        https://BrianHenry.ie
  * License:           GPL-2.0+
@@ -38,7 +38,7 @@ require_once plugin_dir_path( __FILE__ ) . 'autoload.php';
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'BH_WC_CND_EVERFLOW_VERSION', '1.0.0' );
+define( 'BH_WC_CND_EVERFLOW_VERSION', '1.1.0' );
 
 /**
  * Begins execution of the plugin.
