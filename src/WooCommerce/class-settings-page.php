@@ -47,6 +47,7 @@ class Settings_Page extends WC_Integration {
 		$this->init_settings();
 
 		add_action( 'woocommerce_update_options_integration_' . $this->id, array( $this, 'process_admin_options' ) );
+		add_action( 'admin_notices', array( $this, 'display_errors' ) );
 	}
 
 	/**
